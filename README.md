@@ -86,7 +86,7 @@ This project was intended to keep containerized and updated versions of some reg
 You can execute current release with Docker.
 
 ```pws
-docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils bash
+docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" ghcr.io/ark667/k8sutils:master bash
 ```
 
 You can also clone the repo and build the image yourself.
