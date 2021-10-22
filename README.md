@@ -15,27 +15,25 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/Ark667/DynamoDbUtils">
+  <!-- <a href="https://github.com/Ark667/K8sUtils">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-<h3 align="center">DynamoDbUtils</h3>
+<h1 align="center">K8sUtils</h1>
 
   <p align="center">
-    Simple .Net5 application for transfering DynamoDb table data to MongoDb collection.
+    Docker image to keep Kubernetes regular tools version up to date without installing local.
     <br />
-    <a href="https://github.com/Ark667/DynamoDbUtils"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Ark667/K8sUtils"><strong>Explore the docs »</strong></a>
     <br />    
-    <a href="https://github.com/Ark667/DynamoDbUtils/issues">Report Bug</a>
+    <a href="https://github.com/Ark667/K8sUtils/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Ark667/DynamoDbUtils/issues">Request Feature</a>
+    <a href="https://github.com/Ark667/K8sUtils/issues">Request Feature</a>
   </p>
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -54,7 +52,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -65,17 +63,18 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This project was intended to make easy MySql style backup and restore on DynamoDb tables. 
+This project was intended to keep containerized and updated versions of somre regular Kubernetes tools. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 ### Built With
 
-* [.Net5](https://dotnet.microsoft.com/download/dotnet/5.0)
-* [AWSSDK.DynamoDBv2](https://github.com/aws/aws-sdk-net/)
-* [MongoDb.Driver](https://docs.mongodb.com/drivers/csharp/)
-* [CommandLineParser](https://github.com/commandlineparser/commandline)
+* [Docker](https://dotnet.microsoft.com/download/dotnet/5.0)
+* [Ubuntu](https://github.com/aws/aws-sdk-net/)
+* [Kubectl](https://docs.mongodb.com/drivers/csharp/)
+* [Kops](https://github.com/commandlineparser/commandline)
+* [Linkerd](https://github.com/commandlineparser/commandline)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -87,18 +86,18 @@ This project was intended to make easy MySql style backup and restore on DynamoD
 You can execute current release with Docker.
 
 ```pws
-Docker build -t k8sutils .
-
-
 docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils bash
-docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils kubectl version
-docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils kops version
-docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils istioctl version
-docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils kubectl get pods -n kube-system
-
-docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils echo `nKUBECT`n========; kubectl version; echo `nKOPS`n========; kops version; echo `nLINKERD`n========; linkerd version; echo ''
 
 ```
+
+You can also clone the repo and build the image yourself.
+
+```pws
+git clone https://github.com/Ark667/K8sUtils.git
+Docker build -t k8sutils .\K8sUtils
+
+```
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -106,13 +105,23 @@ docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils echo `nKUBE
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Basic usage is pretty straightforrward. Just call dynamodb_backup.py script with required keys and parameters.
+Basic usage is pretty straightforrward. Just run the container with desired tool and parameters. The mapped volume contains Kubectl context configuration so
+the container tools can also use it.
 
 ```pws
+docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils bash
 
 ```
 
+```pws
+docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils kubectl get pods -n kube-system
 
+```
+
+```pws
+docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils echo `nKUBECT`n========; kubectl version; echo `nKOPS`n========; kops version; echo `nLINKERD`n========; linkerd version; echo ''
+
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -149,36 +158,32 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Aingeru Medrano - [@AingeruBlack](https://twitter.com/AingeruBlack) <!-- - email@email_client.com -->
 
-Project Link: [https://github.com/Ark667/DynamoDbUtils](https://github.com/Ark667/DynamoDbUtils)
+Project Link: [https://github.com/Ark667/K8sUtils](https://github.com/Ark667/K8sUtils)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- ACKNOWLEDGMENTS
+<!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()Download and install Yaml editor tool (https://github.com/Gallore/yaml_cli)
-* []()
-* []()
+* [https://github.com/Gallore/yaml_cli](https://github.com/Gallore/yaml_cli)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
- -->
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Ark667/DynamoDbUtils.svg?style=for-the-badge
-[contributors-url]: https://github.com/Ark667/DynamoDbUtils/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Ark667/DynamoDbUtils.svg?style=for-the-badge
-[forks-url]: https://github.com/Ark667/DynamoDbUtils/network/members
-[stars-shield]: https://img.shields.io/github/stars/Ark667/DynamoDbUtils.svg?style=for-the-badge
-[stars-url]: https://github.com/Ark667/DynamoDbUtils/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Ark667/DynamoDbUtils.svg?style=for-the-badge
-[issues-url]: https://github.com/Ark667/DynamoDbUtils/issues
-[license-shield]: https://img.shields.io/github/license/Ark667/DynamoDbUtils.svg?style=for-the-badge
-[license-url]: https://github.com/Ark667/DynamoDbUtils/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Ark667/K8sUtils.svg?style=for-the-badge
+[contributors-url]: https://github.com/Ark667/K8sUtils/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Ark667/K8sUtils.svg?style=for-the-badge
+[forks-url]: https://github.com/Ark667/K8sUtils/network/members
+[stars-shield]: https://img.shields.io/github/stars/Ark667/K8sUtils.svg?style=for-the-badge
+[stars-url]: https://github.com/Ark667/K8sUtils/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Ark667/K8sUtils.svg?style=for-the-badge
+[issues-url]: https://github.com/Ark667/K8sUtils/issues
+[license-shield]: https://img.shields.io/github/license/Ark667/K8sUtils.svg?style=for-the-badge
+[license-url]: https://github.com/Ark667/K8sUtils/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/aingeru/
 [product-screenshot]: images/screenshot.png
