@@ -21,7 +21,7 @@ WORKDIR /home
 # Download and install Yaml editor tool
 COPY ./src/update-yamlcli.sh /home/update-yamlcli.sh
 RUN chmod +x /home/update-yamlcli.sh
-RUN ./update-yamlcli.sh
+#RUN ./update-yamlcli.sh
 
 # Download last stable version of Kubectl
 COPY ./src/update-kubectl.sh /home/update-kubectl.sh
