@@ -63,7 +63,7 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This project was intended to keep containerized and updated versions of somre regular Kubernetes tools. 
+This project was intended to keep containerized and updated versions of some regular Kubernetes tools. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -87,7 +87,6 @@ You can execute current release with Docker.
 
 ```pws
 docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils bash
-
 ```
 
 You can also clone the repo and build the image yourself.
@@ -95,7 +94,6 @@ You can also clone the repo and build the image yourself.
 ```pws
 git clone https://github.com/Ark667/K8sUtils.git
 Docker build -t k8sutils .\K8sUtils
-
 ```
 
 
@@ -110,17 +108,14 @@ the container tools can also use it.
 
 ```pws
 docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils bash
-
 ```
 
 ```pws
 docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils kubectl get pods -n kube-system
-
 ```
 
 ```pws
 docker run --rm -it -v "$env:USERPROFILE\.kube:/root/.kube" k8sutils echo `nKUBECT`n========; kubectl version; echo `nKOPS`n========; kops version; echo `nLINKERD`n========; linkerd version; echo ''
-
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -143,14 +138,12 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
@@ -161,7 +154,6 @@ Aingeru Medrano - [@AingeruBlack](https://twitter.com/AingeruBlack) <!-- - email
 Project Link: [https://github.com/Ark667/K8sUtils](https://github.com/Ark667/K8sUtils)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- ACKNOWLEDGMENTS -->
