@@ -70,11 +70,11 @@ This project was intended to keep containerized and updated versions of some reg
 
 ### Built With
 
-* [Docker](https://dotnet.microsoft.com/download/dotnet/5.0)
-* [Ubuntu](https://github.com/aws/aws-sdk-net/)
-* [Kubectl](https://docs.mongodb.com/drivers/csharp/)
-* [Kops](https://github.com/commandlineparser/commandline)
-* [Linkerd](https://github.com/commandlineparser/commandline)
+* [Docker](https://www.docker.com/)
+* [Ubuntu](https://ubuntu.com/)
+* [Kubectl](https://github.com/kubernetes/kubectl)
+* [Kops](https://github.com/kubernetes/kops)
+* [Linkerd](https://github.com/linkerd/linkerd2)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
